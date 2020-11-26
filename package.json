@@ -21,8 +21,6 @@
     "@babel/core": "^7.10.1",
     "@babel/node": "^7.10.1",
     "@babel/preset-env": "^7.10.1",
-    "fast-csv": "^4.3.0",
-    "morgan": "^1.10.0",
     "nodemon": "^2.0.4"
   },
   "scripts": {

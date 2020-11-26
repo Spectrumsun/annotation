@@ -7,7 +7,6 @@ import routes from "./routes";
 import connectDatabase from './Database';
 
 const app = express();
-app.use(morgan("dev"));
 app.use(cors());
 app.use(bodyParser.json());
 
