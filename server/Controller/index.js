@@ -11,7 +11,7 @@ class Annotation {
     const p = await Topic.find({ $query:{ parent: q } })
     if(p.length < 1) {
       return res.status(200).json({ 
-        status: 'Success', 
+        status: 'No match for sub tree', 
         query: q,
         p
       })
@@ -26,6 +26,7 @@ class Annotation {
       status: 'Success', 
       query: q,
       questionNumber,
+      parent: p[0].ancestors[0],
       subTree: parentToChild[0].descendant,
     })
   }
