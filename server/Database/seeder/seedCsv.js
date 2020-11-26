@@ -5,6 +5,7 @@ import neatCsv from "neat-csv";
 import Question from "../models/Questions";
 import Topic from "../models/Topics";
 import "dotenv/config";
+import connectDatabase from '../index';
 
 const loadFileToMemory = async (fileName) => {
   const filePath = path.resolve(__dirname, fileName);
@@ -73,6 +74,11 @@ const insertTopic = async () => {
   console.log('Topics added')
 }
 
-// insertTopic();
-// insertQuestion();
-export default insertTopic;
+const runSeed = async() => {
+  connectDatabase()
+  await insertTopic();
+  await insertQuestion();
+  mongoose.connection.close();
+}
+
+runSeed();

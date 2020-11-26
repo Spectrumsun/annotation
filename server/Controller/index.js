@@ -1,6 +1,5 @@
 import Questions from "../Database/models/Questions";
 import Topic from "../Database/models/Topics";
-import seeder from "../Database/seeder/seedCsv.js";
 
 class Annotation {
   static welcome(req, res) {
